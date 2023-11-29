@@ -16,24 +16,23 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>4.2.3.Final</version>
-			<scope>compile</scope>
+			<version>5.5.6.Final</version> <!-- Verifique a versão mais recente
+			disponível -->
 		</dependency>
 
 		<!-- Implementação de Entitymanager da JPA-->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.2.3.Final</version>
+			<version>5.5.6.Final</version>
 			<scope>compile</scope>
 		</dependency>
 
 		<!-- Driver JDBC do MySql-->
-
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.25</version>  
+			<version>8.0.21</version>
 			<scope>compile</scope>
 		</dependency>
 
@@ -49,7 +48,7 @@
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
-			<version>3.5</version>
+			<version>8.0</version>
 			<scope>compile</scope>
 		</dependency>
 
@@ -57,9 +56,10 @@
 		<dependency>
 			<groupId>org.glassfish</groupId>
 			<artifactId>javax.faces</artifactId>
-			<version>2.1.21</version>
+			<version>2.3.3</version>
 			<scope>compile</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -67,15 +67,17 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.0</version>
+				<version>3.8.1</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
 
+	<!-- Remova o bloco de repositório PrimeFaces, a menos que seja necessário -->
+	<!--
 	<repositories>
 		<repository>
 			<id>prime-repo</id>
@@ -84,5 +86,5 @@
 			<layout>default</layout>
 		</repository>
 	</repositories>
-
+	-->
 </project>
