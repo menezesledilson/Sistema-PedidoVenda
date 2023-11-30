@@ -3,6 +3,7 @@ package com.algaworks.pedidovenda.model;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,7 +21,11 @@ public class ItemPedido implements Serializable {
 	private Long id;
 	private Integer quantidade;
 	private BigDecimal valorUnitario;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "produto_id", nullable = false)
 	private Produto produto;
+	
 	private Pedido pedido;
 
 	@Id
@@ -51,8 +56,7 @@ public class ItemPedido implements Serializable {
 		this.valorUnitario = valorUnitario;
 	}
 
-	@ManyToOne
-	@JoinColumn(name = "produto_id", nullable = false)
+ 
 	public Produto getProduto() {
 		return produto;
 	}
